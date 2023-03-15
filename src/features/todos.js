@@ -7,7 +7,7 @@ export const todoSlice = createSlice({
     reducers: {
         taskCreated: (state, { payload }) => {
             const task = { id: nanoid(), text: payload, done: false }
-            state.push(task)
+            state.unshift(task)
         },
         taskDeleted: (state, { payload }) => {
             return state.filter(el => el.id !== payload)
